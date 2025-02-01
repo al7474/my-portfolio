@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Ensures Astro's generator meta tag is correctly formatted -->
+    <meta name="generator" content="{Astro.generator}" />
+
+    <title>{title}</title>
+
+    <!-- Google Fonts Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Import Raleway and Open Sans fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Raleway:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+    <!-- This will inject the page content dynamically -->
+  </body>
+</html>
+
+<style is:global>
+  /* Define global CSS variables for colors */
+  :root {
+    --primary-bg: #0e0d0d;
+    --secondary-bg: #191f2e;
+    --tertiary-bg: #111827;
+    --text-color: #fffbf2;
+  }
+
+  /* Set body background to a smooth dark gradient */
+  body {
+    background: linear-gradient(
+      180deg,
+      var(--primary-bg),
+      var(--secondary-bg),
+      var(--tertiary-bg)
+    );
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+  }
+
+  /* Use Raleway for headings with a strong weight */
+  h1,
+  h2,
+  h3 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700; /* Ensures bold and clear headings */
+  }
+
+  /* Use Open Sans for paragraphs with a normal weight */
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400; /* Standard readability */
+  }
+</style>

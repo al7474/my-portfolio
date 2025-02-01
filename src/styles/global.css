@@ -1,0 +1,145 @@
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+/* Allow scrolling but hide the scrollbar */
+body {
+  overflow: auto; /* Enables scrolling */
+}
+
+/* Hide the scrollbar in Webkit browsers (Chrome, Safari, etc.) */
+body::-webkit-scrollbar {
+  display: none; /* This hides the scrollbar */
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.5), 0 0 20px rgba(0, 153, 255, 0.4),
+    0 0 30px rgba(0, 153, 255, 0.3); /* Creates a glowing effect with blue color */
+}
+
+/* Projects Section */
+#modalProyectos {
+  backdrop-filter: blur(8px); /* Blurs the background of the modal */
+  z-index: 1000; /* Ensures the modal is above other elements */
+  background-color: transparent; /* Transparent background */
+  display: none; /* El modal estará oculto por defecto */
+}
+
+/* Modal visible cuando se activa */
+#modalProyectos.visible {
+  display: flex; /* Mostrar el modal usando flex */
+}
+#verMasProyectos {
+  background-color: rgba(102, 102, 255, 0.8); /* Adjusts the button color */
+  box-shadow: 0 0 10px rgba(102, 102, 255, 0.5); /* Light glow effect on the button */
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+#verMasProyectos:hover {
+  box-shadow: 0 0 15px rgba(102, 102, 255, 0.8); /* Increases glow on hover */
+}
+
+/* Skills Section */
+.skill-item {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Moves the item down slightly */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for opacity and movement */
+}
+
+.skill-item.visible {
+  opacity: 1; /* Makes the item visible */
+  transform: translateY(0); /* Resets the vertical position */
+}
+
+/* Modal Carousel */
+.modal-carousel {
+  display: flex; /* Displays items in a row */
+  transition: transform 0.7s ease-in-out; /* Smooth sliding effect */
+}
+
+.modal-carousel img {
+  width: 100%; /* Ensures images take up the full width of the container */
+}
+
+/* Skills Tree Styling */
+#skills-tree {
+  font-family: monospace; /* Monospaced font for the skills tree */
+  white-space: pre; /* Preserves whitespace formatting */
+  line-height: 1.6; /* Line height for better readability */
+  font-size: 16px; /* Font size for readability */
+}
+
+.line {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px); /* Starts above the container */
+  animation: cascade 1s ease forwards; /* Animation for cascading effect */
+}
+
+/* Placeholder when editing a line */
+.line[contenteditable="true"]:empty:before {
+  content: "Edit me..."; /* Placeholder text when the line is empty */
+  color: rgba(255, 255, 255, 0.6); /* Light color for the placeholder */
+  font-style: italic; /* Italicize the placeholder */
+}
+
+/* Tree content container */
+#tree-content {
+  background-color: transparent; /* Transparent background */
+  padding: 10px; /* Padding inside the container */
+}
+
+/* Styling for editable lines when empty */
+.line[contenteditable="true"]:empty {
+  border: none; /* No border when the line is empty */
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  outline: none; /* Removes focus outline */
+}
+
+/* Styling when the line is in focus (editing mode) */
+.line[contenteditable="true"]:focus {
+  outline: none; /* Removes focus outline */
+}
+
+/* Animation for cascading effect */
+@keyframes cascade {
+  0% {
+    opacity: 0; /* Starts with no visibility */
+    transform: translateY(-10px); /* Starts above */
+  }
+  100% {
+    opacity: 1; /* Becomes fully visible */
+    transform: translateY(0); /* Resets vertical position */
+  }
+}
+
+/* Snowfall Effect */
+#snowfall-container {
+  z-index: -1; /* Keeps the snowfall effect behind other elements */
+}
+
+.snowflake {
+  position: absolute; /* Absolute position to place snowflakes anywhere */
+  top: -10px; /* Starts above the screen */
+  width: 10px; /* Size of the snowflake */
+  height: 10px; /* Size of the snowflake */
+  background-color: white; /* White color for the snowflakes */
+  border-radius: 50%; /* Circular shape */
+  pointer-events: none; /* Prevent interaction with the snowflakes */
+  animation-name: fall; /* Fall animation */
+  animation-timing-function: linear; /* Linear movement */
+  animation-iteration-count: infinite; /* Infinite fall effect */
+  animation-duration: calc(
+    2s + 3s * random()
+  ); /* Random duration for falling speed */
+}
+
+/* Snowfall fall animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0); /* Starts at the top of the screen */
+  }
+
+  100% {
+    transform: translateY(100vh); /* Ends at the bottom of the screen */
+  }
+}

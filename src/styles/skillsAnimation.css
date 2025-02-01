@@ -1,0 +1,186 @@
+/* General Styles */
+
+/* Category Header Styles */
+.category-header {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: flex-start; /* Align items to the left */
+  cursor: pointer; /* Pointer cursor for interactive elements */
+  position: relative; /* Allows for relative positioning of child elements */
+  padding-left: 20px; /* Left padding for alignment */
+}
+
+/* Category Dot (used to indicate a category) */
+.dot {
+  width: 10px; /* Size of the dot */
+  height: 10px; /* Size of the dot */
+  background-color: #fff; /* White color for the dot */
+  border-radius: 50%; /* Circular shape */
+  margin-right: 10px; /* Space between the dot and text */
+  position: relative; /* Position relative to the parent container */
+  z-index: 1; /* Ensures it appears above other content */
+}
+
+/* Subcategory (Branch) Styles */
+.branches {
+  display: flex; /* Arrange items in a row */
+  flex-direction: row; /* Horizontal layout */
+  margin-left: 50px; /* Left margin for indentation */
+  margin-top: 5px; /* Top margin for spacing */
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+  flex-wrap: wrap; /* Allow wrapping onto new lines if necessary */
+}
+
+/* Technology Item Styles */
+.tech-item {
+  display: flex; /* Align the items in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 10px; /* Padding for the tech item */
+  background-color: #333; /* Dark background for the tech item */
+  border-radius: 8px; /* Rounded corners */
+  margin-right: 20px; /* Spacing between items */
+  text-align: center; /* Center the text inside */
+  width: 130px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  box-sizing: border-box; /* Include padding and border in the element's total width/height */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+  margin-top: 10px; /* Top margin for spacing */
+
+  /* Animation for the glowing effect and fade-in transition */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(
+    20px
+  ); /* Start with the item slightly below its position */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and position */
+  animation: fadeIn 1s ease-out, glowing 2s infinite alternate; /* Glowing effect animation */
+}
+
+/* Class to make the tech item visible */
+.tech-item.fade-in {
+  opacity: 1; /* Make the item visible */
+  transform: translateY(0); /* Reset position */
+}
+
+/* Technology Logo Styles */
+.tech-logo {
+  width: 20px; /* Set logo size */
+  filter: invert(); /* White color for the logo */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+/* Tech item text styling */
+.tech-item span {
+  color: #fff; /* White text color */
+  font-weight: bold; /* Bold text */
+  font-size: 14px; /* Set font size */
+}
+
+/* Styles for active categories */
+.category.active .branches {
+  opacity: 1; /* Make branches visible */
+}
+
+.category.active .tech-item {
+  opacity: 1; /* Make tech items visible */
+  transform: translateY(0); /* Reset position */
+}
+
+/* Media Queries for Mobile Screens */
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .tech-item {
+    width: 120px; /* Adjust size for smaller screens */
+    height: 40px; /* Keep the height consistent */
+    margin: 10px; /* Add margin for spacing */
+  }
+
+  #skills-tree {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .branches {
+    flex-direction: row; /* Maintain row layout */
+    flex-wrap: wrap; /* Allow wrapping to new rows */
+  }
+
+  .tech-item img {
+    width: 20px; /* Set image size */
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+  .tech-item {
+    width: 120px; /* Adjust size for smaller screens */
+    height: 40px; /* Keep the height consistent */
+    margin: 10px; /* Add margin for spacing */
+  }
+
+  .tech-item span {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+
+/* Items container style */
+.items {
+  position: relative; /* Necessary for pseudo-element positioning */
+  padding-left: 20px; /* Space for the line */
+  margin-left: 25px; /* Left margin for indentation */
+}
+
+/* Pseudo-element for line before items */
+.items::before {
+  content: ""; /* No content, just the line */
+  position: absolute; /* Position the line absolutely */
+  left: 0; /* Align it to the left */
+  top: 0; /* Align it to the top */
+  width: 3px; /* Set line width */
+  height: 100%; /* Make it as tall as the container */
+  opacity: 20%; /* Make the line semi-transparent */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* White color with transparency */
+  border-radius: 2px; /* Rounded corners */
+}
+
+/* Display the items in a row with gaps */
+.items {
+  display: flex; /* Align items in a row */
+  gap: 20px; /* Add gap between items */
+}
+
+/* Tech item border glow animation */
+.tech-item::before {
+  content: ""; /* No content, just a glowing border */
+  position: absolute; /* Position the border inside the tech item */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  right: 0; /* Align it to the right */
+  bottom: 0; /* Align it to the bottom */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid transparent; /* Transparent border for a glowing effect */
+  background: linear-gradient(
+    90deg,
+    rgba(26, 26, 26, 0) 0%,
+    /* Transparent start */ rgba(102, 102, 102, 0.452) 50%,
+    /* Gradient middle */ rgba(0, 0, 0, 0) 100% /* Transparent end */
+  );
+  background-size: 200% 100%; /* Set gradient size */
+  animation: light-move 4s linear infinite; /* Animate the glowing effect */
+  pointer-events: none; /* Prevent interaction with the border */
+}
+
+/* Animation for light movement in the border */
+@keyframes light-move {
+  0% {
+    background-position: -100% 0; /* Start the animation from the left */
+  }
+  100% {
+    background-position: 100% 0; /* Move the animation to the right */
+  }
+}
