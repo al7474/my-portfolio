@@ -1,4 +1,4 @@
-
+const snowfallContainer = document.getElementById('snowfall-container');
 
 // Function to create a snowflake element
 function createSnowflake() {

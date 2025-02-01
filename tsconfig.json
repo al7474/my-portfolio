@@ -1,5 +1,17 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "compilerOptions": {
+    "target": "ES6", // Define la versión de ECMAScript a la que deseas compilar
+    "module": "ESNext", // Usar el sistema de módulos de ESNext
+    "moduleResolution": "Node", // Resolución de módulos al estilo de Node.js
+    "outDir": "./public/scripts", // Carpeta donde se guardarán los archivos .js compilados
+    "rootDir": "./src/scripts", // Carpeta donde están tus archivos .ts
+    "strict": true // Activar la comprobación estricta de tipos
+  },
+  "include": [
+    "src/scripts/**/*" // Incluir todos los archivos .ts en la carpeta src/scripts
+  ],
+  "exclude": [
+    "node_modules", // Excluir la carpeta node_modules
+    "public/scripts" // Excluir la carpeta de salida para no sobrescribir
+  ]
 }

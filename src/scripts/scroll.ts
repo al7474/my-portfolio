@@ -1,4 +1,5 @@
 
+const navbar = document.querySelector('nav');
 if (navbar) {
   const links = navbar.querySelectorAll('ul li a'); // Select all anchor links in the navbar
 

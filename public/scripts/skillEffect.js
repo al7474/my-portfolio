@@ -1,7 +1,7 @@
+"use strict";
 // Apply the 'fade-in' class to technology items when the page loads
 window.addEventListener('DOMContentLoaded', () => {
     const techItems = document.querySelectorAll('.tech-item'); // Select all technology items
-
     // Add the 'fade-in' class with a small delay for each item
     techItems.forEach((item, index) => {
         setTimeout(() => {
