@@ -12,6 +12,6 @@
   ],
   "exclude": [
     "node_modules", // Exclude the node_modules folder
-    "public/scripts" // Exclude the output folder to avoid overwriting
+    // "public/scripts" // Exclude the output folder to avoid overwriting
   ]
 }
