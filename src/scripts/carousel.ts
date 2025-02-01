@@ -22,7 +22,7 @@ function createCarousel(carouselId: string, indicatorId: string) {
   function createIndicators() {
     images.forEach((_, index) => {
       const indicator = document.createElement('button');
-      indicator.className = 'w-3 h-3 rounded-full bg-gray-500 hover:bg-gray-700 focus:outline-none';
+      indicator.className = 'w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 focus:outline-none';
       indicator.setAttribute('data-index', index.toString());
       indicator.addEventListener('click', () => goToImage(index));
       indicatorsContainer.appendChild(indicator);
@@ -36,8 +36,8 @@ function createCarousel(carouselId: string, indicatorId: string) {
 
     // Update the indicators to reflect the current image
     Array.from(indicatorsContainer.children).forEach((indicator, index) => {
-      (indicator as HTMLElement).classList.toggle('bg-gray-700', index === currentIndex);
-      (indicator as HTMLElement).classList.toggle('bg-gray-500', index !== currentIndex);
+      (indicator as HTMLElement).classList.toggle('bg-gray-800', index === currentIndex);
+      (indicator as HTMLElement).classList.toggle('bg-gray-600', index !== currentIndex);
     });
   }
 
