@@ -1,0 +1,56 @@
+---
+// Define Props interface for type safety
+interface Props {
+  title: string;
+  description: string;
+  images: string[];
+  carouselId: string;
+  indicatorId: string;
+}
+
+// Destructure properties from Astro.props
+const { title, description, images, carouselId, indicatorId }: Props =
+  Astro.props;
+---
+
+<div
+  id="project-container2"
+  class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12"
+>
+  <div id="project-description" class="flex flex-col justify-center">
+    <h4 class="text-2xl font-semibold mb-2 pb-2">{title}</h4>
+    <p class="text-gray-300 leading-relaxed text-justify">{description}</p>
+  </div>
+
+  <div
+    id="project-carousel"
+    class="relative w-full max-w-lg mx-auto overflow-hidden pt-10"
+  >
+    {/* Carousel images container */}
+    <div
+      class="modal-carousel flex transition-transform duration-700 ease-in-out"
+      id={carouselId}
+    >
+      {
+        images.map((image, index) => (
+          <img
+            src={image}
+            alt={`Proyecto ${title} - Imagen ${index + 1}`}
+            class="w-full h-auto rounded-lg shadow-md cursor-pointer"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+
+    <div
+      id={indicatorId}
+      class="flex justify-center mt-4 space-x-2"
+      aria-live="polite"
+    >
+    </div>
+  </div>
+</div>
+
+{/* Import the carousel script for functionality */}
+<script type="module" src="/scripts/carousel.js"></script>

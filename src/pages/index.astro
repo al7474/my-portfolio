@@ -1,0 +1,383 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Project from "../components/Project.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/skillsAnimation.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio</title>
+  </head>
+
+  <Layout title="Principal page">
+    <body class="bg-gray-900 text-white">
+      <main class="mt-16 p-4">
+        <Navbar />
+
+        <section class="text-center">
+          <div class="relative inline-block mb-4">
+            <img
+              src="/imgs/profile.jpeg"
+              alt="Foto de Perfil"
+              class="w-40 h-40 rounded-full mx-auto object-cover"
+              style="object-position: center -10px;"
+            />
+            <div
+              class="absolute inset-0 rounded-full opacity-100 animate-pulse glow"
+            >
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="text-center mt-8">
+          <div class="flex justify-center space-x-4">
+            <a
+              href="mailto:aleyton303@gmail.com?subject=Consulta%20sobre%20portafolio&body=Hola,%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20tu%20trabajo."
+              class="bg-gray-800 bg-opacity-70 hover:bg-opacity-100 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center text-center"
+            >
+              <img
+                src="/icons/gmail.svg"
+                alt="Email"
+                class="w-6 h-6 pr-2 inline-block filter brightness-0 invert"
+              />
+              Email
+            </a>
+
+            <a
+              href="https://github.com/al7474"
+              target="_blank"
+              class="bg-gray-800 bg-opacity-70 hover:bg-opacity-100 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center text-center"
+            >
+              <img
+                src="/icons/github.svg"
+                alt="GitHub"
+                class="w-6 h-6 pr-2 inline-block filter brightness-0 invert"
+              /> GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/al-275bb8323/"
+              target="_blank"
+              class="bg-gray-800 bg-opacity-70 hover:bg-opacity-100 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center text-center"
+            >
+              <img
+                src="/icons/linkedin.svg"
+                alt="LinkedIn"
+                class="w-6 h-6 pr-2 inline-block filter brightness-0 invert"
+              /> LinkedIn
+            </a>
+
+            <a
+              href="/pdfs/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-gray-800 bg-opacity-70 hover:bg-opacity-100 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center text-center"
+            >
+              <img
+                src="/icons/file.svg"
+                alt="Cv"
+                class="w-6 h-6 pr-2 inline-block filter brightness-0 invert"
+              /> CV
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="text-center mt-20 p-8 bg-gray-800 bg-opacity-95 rounded-lg shadow-lg max-w-5xl mx-auto"
+        >
+          <h3 id="about" class="text-3xl font-light mb-6 sm:text-4xl">
+            Sobre Mí
+          </h3>
+
+          <p
+            class="text-gray-300 text-lg leading-relaxed pl-3 pr-3 pb-5 pt-5 justify-center sm:text-xxl"
+          >
+            Soy un ingeniero de sistemas apasionado por el desarrollo web y la
+            programación. Me gusta crear aplicaciones funcionales y
+            estéticamente agradables, siempre buscando la mejor experiencia para
+            el usuario. Estoy en constante aprendizaje y disfruto de enfrentar
+            nuevos desafíos en la tecnología <span id="dots"></span>
+          </p>
+          <br />
+        </section>
+
+        <section>
+          <div
+            id="projects"
+            class="mt-10 p-6 bg-gray-800 bg-opacity-95 rounded-lg shadow-lg max-w-5xl mx-auto"
+          >
+            <h3 class="text-3xl font-light mb-6 text-center">Proyectos</h3>
+
+            <div class="flex justify-center flex-wrap gap-4 mb-6 z-1">
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/html5.svg"
+                alt="HTML5"
+                class="w-7 sm:w-9 filter invert"
+                title="HTML5"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/css3.svg"
+                alt="CSS3"
+                class="w-7 sm:w-9 filter invert"
+                title="CSS3"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/javascript.svg"
+                alt="JavaScript"
+                class="w-7 sm:w-9 filter invert"
+                title="JavaScript"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/bootstrap.svg"
+                alt="Bootstrap"
+                class="w-7 sm:w-9 filter invert"
+                title="Bootstrap"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/php.svg"
+                alt="PHP"
+                class="w-7 sm:w-9 filter invert"
+                title="PHP"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/mysql.svg"
+                alt="MySQL"
+                class="w-7 sm:w-9 filter invert"
+                title="MySQL"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/leaflet.svg"
+                alt="Leaflet"
+                class="w-7 sm:w-9 filter invert"
+                title="Leaflet"
+              />
+            </div>
+            <div
+              id="project-container"
+              class="relative transition-all duration-500 ease-in-out"
+            >
+              <Project
+                title="Proyecto 1"
+                description="Consistió en un sistema de recomendación sensible al contexto sobre la contaminación ocasionada por residuos sólidos en espacios públicos, implementado en un aplicativo web con el apoyo de un sistema de información geográfica (SIG). A través de este sistema, los usuarios pueden reportar y visualizar los niveles de contaminación en un mapa zonificado, lo que promueve la concientización y facilita la toma de decisiones para reducir el impacto ambiental. El desarrollo incluyó funcionalidades educativas y un módulo administrativo para análisis detallados."
+                carouselId="carousel1"
+                indicatorId="indicator1"
+                images={[
+                  "/imgs/p1-1.webp",
+                  "/imgs/p1-2.webp",
+                  "/imgs/p1-3.webp",
+                  "/imgs/p1-4.webp",
+                  "/imgs/p1-5.webp",
+                ]}
+              />
+            </div>
+
+            <div class="text-center mt-8">
+              <button
+                id="verMasProyectos"
+                class="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Ver más
+              </button>
+            </div>
+
+            <div
+              id="modalProyectos"
+              class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center p-4"
+            >
+              <div
+                class="bg-gray-900 p-6 rounded-lg shadow-lg relative w-4/5 max-w-5xl max-h-[90vh] overflow-auto"
+              >
+                <button
+                  id="closeButton"
+                  class="absolute top-2 right-2 text-white text-xl">X</button
+                >
+
+                <div class="flex space-x-5 justify-center mb-4">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/angular.svg"
+                    alt="Angular"
+                    class="w-9 filter invert"
+                    title="Angular"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/nodedotjs.svg"
+                    alt="Node.js"
+                    class="w-9 filter invert"
+                    title="Node.js"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/typescript.svg"
+                    alt="TypeScript"
+                    class="w-9 filter invert"
+                    title="TypeScript"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/postgresql.svg"
+                    alt="PostgreSQL"
+                    class="w-9 filter invert"
+                    title="PostgreSQL"
+                  />
+                </div>
+
+                <div>
+                  <Project
+                    title="Proyecto 2"
+                    description="Desarrollé un sistema administrativo destinado a mejorar la gestión de convenios en áreas clave como la jefatura de prácticas, el departamento jurídico y rectoría. El objetivo principal del proyecto era reducir la dependencia del papel y automatizar procesos que anteriormente se llevaban a cabo de manera manual, lo que permitió una mayor eficiencia y precisión en el registro y validación de nuevos convenios con empresas. Mi rol en el proyecto abarcó desde el análisis y levantamiento de requisitos hasta el diseño de las interfaces, además de programar tanto el frontend como el backend del sistema. Una vez desarrollado, me encargué de realizar pruebas exhaustivas y evaluaciones para garantizar su correcto funcionamiento y cumplimiento con los estándares requeridos."
+                    carouselId="carousel2"
+                    indicatorId="indicator2"
+                    images={[
+                      "/imgs/p2-1.webp",
+                      "/imgs/p2-2.webp",
+                      "/imgs/p2-3.webp",
+                      "/imgs/p2-4.webp",
+                      "/imgs/p2-5.webp",
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="text-center mt-20 p-8 bg-gray-800 bg-opacity-95 rounded-lg shadow-lg max-w-5xl mx-auto"
+        >
+          <div id="skills-tree" class="relative flex flex-col items-start">
+            <h4 style="font-size: 36px;">Habilidades...</h4>
+            <div class="node main-node">
+              <div class="node category" id="frontend-category">
+                <div class="category-header">
+                  <span class="dot"></span> Frontend
+                </div>
+                <div class="items">
+                  <div class="branches" id="frontend-branch">
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/html5.svg"
+                        alt="HTML"
+                      />
+                      <span>HTML</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img class="tech-logo" src="/icons/css.svg" alt="CSS" />
+                      <span>CSS</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/js.svg"
+                        alt="JavaScript"
+                      />
+                      <span>JavaScript</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/bootstrap.svg"
+                        alt="Bootstrap"
+                      />
+                      <span>Bootstrap</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/angular.svg"
+                        alt="Angular"
+                      />
+                      <span>Angular</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/ts.svg"
+                        alt="TypeScript"
+                      />
+                      <span>TypeScript</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/astro.svg"
+                        alt="Astro"
+                      />
+                      <span>Astro</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/tailwindcss.svg"
+                        alt="Tailwind CSS"
+                      />
+                      <span>Tailwind CSS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="node category" id="backend-category">
+                <div class="category-header">
+                  <span class="dot"></span> Backend
+                </div>
+                <div class="items">
+                  <div class="branches" id="backend-branch">
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/node.svg"
+                        alt="Node.js"
+                      />
+                      <span>Node.js</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img class="tech-logo" src="/icons/php.svg" alt="PHP" />
+                      <span>PHP</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/mysql.svg"
+                        alt="MySQL"
+                      />
+                      <span>MySQL</span>
+                    </div>
+                    <div class="node tech-item">
+                      <img
+                        class="tech-logo"
+                        src="/icons/postgresql.svg"
+                        alt="MySQL"
+                      />
+                      <span>PostgreSQL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <Footer />
+        </section>
+      </main>
+
+      <div
+        id="snowfall-container"
+        class="fixed top-0 left-0 w-full h-full pointer-events-none"
+      >
+      </div>
+
+      <script type="module" src="/scripts/snowfall.js"></script>
+      <script type="module" src="/scripts/scroll.js"></script>
+      <script type="module" src="/scripts/dotsEffect.js"></script>
+      <script type="module" src="/scripts/viewMore.js"></script>
+      <script type="module" src="/scripts/modal.js"></script>
+      <script type="module" src="/scripts/skillEffect.js"></script>
+    </body>
+  </Layout>
+</html>

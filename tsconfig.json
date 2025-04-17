@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Define the version of ECMAScript you want to compile to
+    "module": "ESNext", // Use the ESNext module system
+    "moduleResolution": "Node", // Node.js style module resolution
+    "outDir": "./public/scripts", // Folder where the compiled .js files will be saved
+    "rootDir": "./src/scripts", // Folder where your .ts files are located
+    "strict": true // Enable strict type-checking
+  },
+  "include": [
+    "src/scripts/**/*" // Include all .ts files in the src/scripts folder
+  ],
+  "exclude": [
+    "node_modules", // Exclude the node_modules folder
+    // "public/scripts" // Exclude the output folder to avoid overwriting
+  ]
+}
